@@ -17,11 +17,14 @@ export default function Home() {
         Beyond engineering, I'm also an avid photographer. Follow the links below to find out more!
         </p>
         <p>
-          <Link href="/posts/engineering">Engineering</Link>
+          <Link href="/engineering">Engineering</Link>
           {' '}&#183;{' '}
-          <Link href="/posts/photography">Photography</Link>
+          <Link href="/photography">Photography</Link>
+          {' '}&#183;{' '}
+          <Link href="/blog">Blog</Link>
         </p>
       </section>
+
     </Layout>
   );
 }
