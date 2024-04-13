@@ -4,6 +4,7 @@ const nextConfig = {
     images: {
         loader: 'akamai',
         path: '',
+        unoptimized: true
     },
    
     // Optional: Change the output directory `out` -> `dist`
