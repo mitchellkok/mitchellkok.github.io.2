@@ -10,10 +10,16 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <Link href="/posts/first-post">our Next.js tutorial</Link>.)
+        My name is Mitchell. I'm a recent Computer Engineering graduate from NTU's Renaissance Engineering Programme, and this is my website!
+        </p>
+        <p>
+        Beyond engineering, I'm also an avid photographer. Follow the links below to find out more!
+        </p>
+        <p>
+          <Link href="/posts/engineering">Engineering</Link>
+          {' '}&#183;{' '}
+          <Link href="/posts/photography">Photography</Link>
         </p>
       </section>
     </Layout>

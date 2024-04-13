@@ -1,15 +1,16 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
+import layoutStyles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Your Name';
+const name = 'Mitchell Kok';
+const picture = "/images/profile.jpg";
 export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className={layoutStyles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,12 +26,12 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
+      <header className={layoutStyles.header}>
+        {home ? ( // if home, bigger profile pic & name
           <>
             <Image
               priority
-              src="/images/profile.png"
+              src={picture}
               className={utilStyles.borderCircle}
               height={144}
               width={144}
@@ -43,7 +44,7 @@ export default function Layout({ children, home }) {
             <Link href="/">
               <Image
                 priority
-                src="/images/profile.png"
+                src={picture}
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
@@ -60,7 +61,7 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className={layoutStyles.backToHome}>
           <Link href="/">← Back to home</Link>
         </div>
       )}

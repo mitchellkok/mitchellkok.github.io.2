@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 
 
-export default function FirstPost() {
+export default function AboutMe() {
     return (
       <Layout>
         <Head>
-          <title>First Post</title>
+          <title>About Me</title>
         </Head>
         {/* <Script
             src="https://connect.facebook.net/en_US/sdk.js"
@@ -16,9 +16,9 @@ export default function FirstPost() {
             console.log(`script loaded correctly, window.FB has been populated`)
             }
         /> */}
-        <h1>First Post</h1>
+        <h1>About Me</h1>
         <h2>
-          <Link href="/">← Back to home</Link>
+          This is my first post!
         </h2>
       </Layout>
     );
