@@ -46,6 +46,15 @@
   .listItem {
     margin: 0 0 1.25rem;
   }
+
+  .listItemTitle {
+    font-size: inherit;
+  }
+
+  .listItemSubtitle {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
   
   .lightText {
     color: #666;

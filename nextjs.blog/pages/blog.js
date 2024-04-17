@@ -1,5 +1,6 @@
 import utilStyles from "../styles/utils.module.css"
 import Head from 'next/head';
+import Link from 'next/link'
 import Layout from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 
@@ -18,20 +19,14 @@ export default function Blog({ allPostsData }) {
         <Head>
           <title>Blog</title>
         </Head>
-        <h1>Blog</h1>
+        <h1 className={utilStyles.headingXL}>Blog</h1>
         {/* Add this <section> tag below the existing <section> tag */}
         <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-            <h2 className={utilStyles.headingLg}>Blog</h2>
             <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title, content }) => (
+            {allPostsData.map(({ id, date, title }) => (
                 <li className={utilStyles.listItem} key={id}>
-                {title}
-                <br />
-                {id}
-                <br />
-                {date}
-                <br />
-                {content}
+                  <div className={utilStyles.listItemTitle}><Link href={`/posts/${id}`}>{title}</Link></div>
+                  <div className={utilStyles.listItemSubtitle}>{date}</div>
                 </li>
             ))}
             </ul>
