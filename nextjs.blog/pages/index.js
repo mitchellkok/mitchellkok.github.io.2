@@ -22,6 +22,8 @@ export default function Home() {
           <Link href="/photography">Photography</Link>
           {' '}&#183;{' '}
           <Link href="/blog">Blog</Link>
+          {' '}&#183;{' '}
+          <Link href="/api-call">API</Link>
         </p>
       </section>
 
