@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-function App() {
+function ApiCall() {
   const [data, setData] = useState('');
-  console.log("Attempting API test")
+  
   useEffect(() => {
     (async function () {
-      const { text } = await( await fetch(`/api/api-test`)).json();
+      console.log("Attempting API test")
+      const { text } = await( await fetch(`/api/pokemon`)).json();
       setData(text);
     })();
-  });
+  }, []);
 
-  return <div>{data}</div>;
+  return <div>
+        {JSON.stringify(data, null, 2)}
+    </div>;
 }
 
-export default App;
+export default ApiCall;
