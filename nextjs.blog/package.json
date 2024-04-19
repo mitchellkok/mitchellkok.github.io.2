@@ -15,9 +15,6 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   },
-  // "engines": {
-  //   "node": ">=18"
-  // },
   "engines": {
     "node": "18.17.1"
   },
