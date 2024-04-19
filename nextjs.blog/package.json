@@ -15,8 +15,11 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   },
+  // "engines": {
+  //   "node": ">=18"
+  // },
   "engines": {
-    "node": ">=18"
+    "node": "18.17.1"
   },
   "devDependencies": {
     "@azure/static-web-apps-cli": "^1.1.7",
