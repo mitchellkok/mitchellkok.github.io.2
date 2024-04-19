@@ -21,13 +21,13 @@ export default function Post({ postData }) {
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
         <div className="">
-          <Link href="/">Return to Blog Posts</Link>
+          <Link href="/blog">Return to Blog Posts</Link>
         </div>
       </Layout>
     );
   }
 
-export async function getStaticPaths() {
+export async function getStaticPaths() { // runs on server side
   // Return a list of possible value for id (paths to pages)
   const paths = getAllPostIds();
   return {
@@ -36,7 +36,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }) { // runs on server side
   // Fetch necessary data for the blog post using params.id
   const postData = await getPostData(params.id);
   return {
