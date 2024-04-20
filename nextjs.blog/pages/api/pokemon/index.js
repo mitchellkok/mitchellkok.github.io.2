@@ -1,10 +1,16 @@
 export default async function handler(req, res) {
     // An API wrapper for the pokeapi endpoint
     console.log("Reached the Pokemon API!");
+
+    // Get the Pokemon name from the user input (assuming it's in the request body)
+
+    const body = JSON.parse(req.body);
+    const { pokemonName } = body;
+
     const callAPI = async () => {
         try {
-            console.log("connecting...")
-            const res = await fetch(`https://pokeapi.co/api/v2/pokemon/bulbasaur`);
+            console.log("connecting...,", pokemonName)
+            const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
             const data = await res.json();
             // console.log(data);
             return {text: data};
