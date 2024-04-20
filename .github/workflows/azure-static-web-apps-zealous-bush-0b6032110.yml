@@ -33,6 +33,7 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
+          NPM_CONFIG_LEGACY_PEER_DEPS: true
           ENABLE_PREVIEW_FEATURES: true
         #   IS_STATIC_EXPORT: true
   # close_pull_request_job:

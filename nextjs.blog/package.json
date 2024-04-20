@@ -9,7 +9,7 @@
     "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
     "gray-matter": "^4.0.3",
-    "jsoneditor": "^10.0.2",
+    "jsoneditor": "~9.0.0",
     "next": "latest",
     "nextjs-jsoneditor": "^0.0.2",
     "react": "18.2.0",
