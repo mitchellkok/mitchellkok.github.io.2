@@ -3,9 +3,15 @@ export default async function handler(req, res) {
     console.log("Reached the Pokemon API!");
 
     // Get the Pokemon name from the user input (assuming it's in the request body)
-
-    const body = JSON.parse(req.body);
-    const { pokemonName } = body;
+    var pokemonName = 'bulbasaur';
+    try {
+        const body = req.body;
+        pokemonName = body.pokemonName;
+    }
+    catch {
+        console.log("Failed API call");
+        res.status(400).json({ message: 'Invalid JSON format' })
+    }
 
     const callAPI = async () => {
         try {
