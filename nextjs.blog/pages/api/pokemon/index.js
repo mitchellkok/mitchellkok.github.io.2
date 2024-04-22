@@ -5,7 +5,13 @@ export default async function handler(req, res) {
     // Get the Pokemon name from the user input (assuming it's in the request body)
     var pokemonName = 'bulbasaur';
     try {
-        const body = req.body;
+        console.log(req.body, typeof req.body)
+        var body = {};
+        if (typeof req.body === 'string') {
+            body = JSON.parse(req.body);
+        } else {
+            body = req.body;
+        }
         pokemonName = body.pokemonName;
     }
     catch {
