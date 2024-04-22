@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import dynamic from "next/dynamic";
 import Layout from '../components/layout';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import utilStyles from "../styles/utils.module.css"
 
@@ -30,6 +31,7 @@ function toTitleCase(str) {
 export default function PokeApi({ postData }) {
   const [data, setData] = useState('');
   const [pokemonName, setPokemonName] = useState('bulbasaur'); // State to hold the Pokemon name
+  const [pokemonSprite, setPokemonSprite] = useState(''); // State to hold the Pokemon name
 
   const clearData = async () => {
     setData("");
@@ -49,13 +51,16 @@ export default function PokeApi({ postData }) {
     setData(text);
   };
 
+  useEffect(() => {
+    const sprites = data?.sprites?.front_default;
+    console.log(sprites);
+  }, [pokemonSprite]);
+
   return (
     <Layout>
-      <p>
-        <h1 className={utilStyles.headingXl}>
-          Pokemon API
-        </h1>
-      </p>
+      <h1 className={utilStyles.headingXl}>
+        Pokémon API
+      </h1>
       {!data && <div>
         <input
           type="text"
@@ -66,10 +71,20 @@ export default function PokeApi({ postData }) {
       </div>}
 
       {data && <div key={ data }>
-        <p className={utilStyles.headingLg}>{ toTitleCase(pokemonName) }</p>
-        <p>
+        <div className={[utilStyles.headingLgBold, utilStyles.flexItem].join(" ")}>
+          <Image
+              priority
+              src={ data?.sprites?.front_default || "/images/sprite.png" }
+              height={72}
+              width={72}
+              // className={utilStyles.borderCircle}
+              alt=""
+            />
+            { toTitleCase(pokemonName) }
+        </div>
+        <div>
           <JsonEditor value={ data }/>
-        </p>
+        </div>
         <p className="">
           <Link href="/poke-api" onClick={() => clearData()}>Reset</Link>
         </p>

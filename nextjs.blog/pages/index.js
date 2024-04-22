@@ -23,7 +23,7 @@ export default function Home() {
           {' '}&#183;{' '}
           <Link href="/blog">Blog</Link>
           {' '}&#183;{' '}
-          <Link href="/poke-api">Poke-API</Link>
+        <Link href="/poke-api">Poké-API</Link>
         </p>
       </section>
 

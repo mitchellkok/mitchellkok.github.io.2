@@ -19,6 +19,13 @@
     line-height: 1.4;
     margin: 1rem 0;
   }
+
+  .headingLgBold {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin: 1rem 0;
+    font-weight: bold;
+  }
   
   .headingMd {
     font-size: 1.2rem;
@@ -58,4 +65,9 @@
   
   .lightText {
     color: #666;
+  }
+
+  .flexItem {
+    display:flex;
+    align-items:center;
   }
