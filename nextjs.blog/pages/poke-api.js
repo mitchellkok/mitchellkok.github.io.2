@@ -74,7 +74,7 @@ export default function PokeApi({ postData }) {
         <div className={[utilStyles.headingLgBold, utilStyles.flexItem].join(" ")}>
           <Image
               priority
-              src={ data?.sprites?.front_default }
+              src={ data?.sprites?.front_default || "/images/sprite.png" }
               height={72}
               width={72}
               // className={utilStyles.borderCircle}
